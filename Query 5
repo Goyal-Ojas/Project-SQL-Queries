@@ -1,0 +1,6 @@
+SELECT cfirstname, clastname, cphone
+FROM customer
+INNER JOIN encounter ON customer.customerid = encounter.customerid
+INNER JOIN salesperson ON encounter.salesid = salesperson.salesid
+WHERE sfirstname = 'Colin'
+    AND clastname LIKE 'Hans%n'
