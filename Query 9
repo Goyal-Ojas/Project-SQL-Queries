@@ -1,0 +1,8 @@
+SELECT cfirstname, clastname, creditdescription, annualincome
+FROM customer
+INNER JOIN creditrating ON creditrating.creditid = customer.creditid
+WHERE annualincome > 100000
+    AND (creditdescription = 'Fair'
+        OR creditdescription = 'Poor'
+        OR creditdescription = 'Very Poor'
+        OR creditdescription = 'Extremely Poor')
