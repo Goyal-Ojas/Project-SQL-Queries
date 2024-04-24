@@ -1,0 +1,10 @@
+SELECT sfirstname, slastname, COUNT (encid) AS encounter_count
+FROM salesperson
+INNER JOIN encounter ON salesperson.salesid = encounter.salesid
+INNER JOIN customer ON encounter.customerid = customer.customerid
+INNER JOIN creditrating on customer.creditid = creditrating.creditid
+WHERE annualincome <= 25000
+    OR (creditdescription = 'Very Poor'
+    OR creditdescription = 'Extremely Poor')
+GROUP BY sfirstname, slastname
+ORDER BY slastname
