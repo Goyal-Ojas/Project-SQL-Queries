@@ -1,0 +1,10 @@
+SELECT creditdescription, COUNT (encdate) AS encounter_Count
+FROM customer
+INNER JOIN encounter ON customer.customerid = encounter.customerid
+INNER JOIN creditrating ON customer.creditid = creditrating.creditid
+WHERE encdate = '2015-07-05'
+    OR encdate = '2015-07-12'
+    OR encdate = '2015-07-19'
+    OR encdate = '2015-07-26'
+GROUP BY creditdescription
+ORDER BY creditdescription
