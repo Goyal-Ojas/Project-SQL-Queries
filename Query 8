@@ -1,0 +1,4 @@
+SELECT AVG (annualincome)
+FROM customer
+INNER JOIN encounter ON customer.customerid = encounter.customerid
+WHERE purchase = 'true'
