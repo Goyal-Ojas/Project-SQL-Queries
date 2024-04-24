@@ -1,0 +1,3 @@
+SELECT COUNT (encid)
+FROM encounter
+WHERE purchase = 'false'
