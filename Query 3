@@ -1,0 +1,5 @@
+SELECT cfirstname, clastname, annualincome
+FROM customer
+JOIN encounter ON encounter.customerid = customer.customerid
+JOIN salesperson ON encounter.salesid = salesperson.salesid
+WHERE sfirstname = 'Katie' AND annualincome > 80000 AND purchase = 'true';
