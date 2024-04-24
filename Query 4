@@ -1,0 +1,10 @@
+SELECT cfirstname, clastname, creditdescription
+FROM customer
+INNER JOIN creditrating ON customer.creditid = creditrating.creditid
+INNER JOIN encounter ON customer.customerid = encounter.customerid
+INNER JOIN salesperson ON encounter.salesid = salesperson.salesid
+WHERE sfirstname = "Dudley"
+    AND (creditdescription = 'Poor'
+        OR creditdescription = 'Very Poor'
+        OR creditdescription = 'Extremely Poor')
+    AND purchase = 'true'
